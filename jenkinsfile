@@ -8,7 +8,7 @@ stage('build'){
 stage('archive'){
     archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
 }
-stage( publish test report){
+stage( 'publish test report'){
     junit '**/TEST-*.xml'
 }
 }
