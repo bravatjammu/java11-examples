@@ -2,8 +2,8 @@ node('jdk11-mvn3.8.4') {
     stage('git') {
     git 'https://github.com/bravatjammu/java11-examples.git'
 }
-stage('build'){
-    sh 'mvn clean package'
+stage('build'){    
+    sh '/usr/local/apache-maven-3.8.4/bin/mvn clean package'
 }
 stage('archive'){
     archive 'target/*.jar'
