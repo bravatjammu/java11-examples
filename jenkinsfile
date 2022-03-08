@@ -1,0 +1,11 @@
+node('jdk11-mvn3.8.4') {
+    stage('git') {
+    git 'https://github.com/bravatjammu/java11-examples.git'
+}
+stage('build'){
+    sh 'mvn clean package'
+}
+stage('archiveArtifacts'){
+    archiveArtifacts artifacts: 'target/*.jar'
+}
+}
